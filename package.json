@@ -1,0 +1,27 @@
+{
+  "name": "hellopuppeteer",
+  "version": "1.0.0",
+  "description": "Crawler with puppteer",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kokoFE/helloPuppteer.git"
+  },
+  "keywords": [
+    "crawler",
+    "puppeteer"
+  ],
+  "author": "kokoFE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kokoFE/helloPuppteer/issues"
+  },
+  "homepage": "https://github.com/kokoFE/helloPuppteer#readme"
+}
