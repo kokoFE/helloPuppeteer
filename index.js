@@ -8,7 +8,8 @@ const BUTTON_SELECTOR = '#login > form > div.auth-form-body.mt-3 > input.btn.btn
 async function run () {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto('https://github.com/login');
+  await page.goto('https://cn.vuejs.org/v2/guide/');
+  // await page.goto('https://github.com/login');
   // await page.goto('https://www.jianshu.com/sign_in');
   // await page.click(USERNAME_SELECTOR);
   await page.type(USERNAME_SELECTOR, CREDS.username);
