@@ -6,6 +6,7 @@ emitter.setMaxListeners(0)
 // process.setMaxListeners(Infinity);
 const CREDS = require('./creds');
 // npm install -g jsondiffpatch
+// str.replace(/<[^>]+>/g,"");
 const USERNAME_SELECTOR = '#login_field';
 const PASSWORD_SELECTOR = '#password';
 const BUTTON_SELECTOR = '#login > form > div.auth-form-body.mt-3 > input.btn.btn-primary.btn-block';
@@ -23,11 +24,26 @@ async function run (error) {
         setTimeout(async () => {
           try {
             await page.goto(item.href)
-            console.log(item.href)
+            const CONTEXT_SELECTOR = '#main > div.content.guide.with-sidebar';
+            await page.evaluate((contextSelector) => {
+              console.log(document)
+              const $context = document.querySelector(contextSelector);
+              // console.log($context)
+            }, CONTEXT_SELECTOR)
           } catch (error) {
             console.log('error:' + error)
           }
         }, index * 1000)
+        // try {
+        //   await page.goto(item.href);
+        //   const CONTEXT_SELECTOR = '#main > div.content.guide.with-sidebar.installation-guide';
+        //   await page.evaluate((contextSelector) => {
+        //     const context = document.querySelector(contextSelector);
+        //     console.log(context)
+        //   }, CONTEXT_SELECTOR)
+        // } catch (error) {
+        //   console.log('error:' + error);
+        // }
       }
     })
 
